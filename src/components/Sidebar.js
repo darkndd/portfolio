@@ -1,17 +1,17 @@
 "use client";
 import { useState } from "react";
 import { FaEnvelope, FaPhoneAlt, FaCalendarAlt, FaMapMarkerAlt, FaGithub, FaLinkedin, FaChevronDown } from "react-icons/fa";
+import { personalInfo } from '../data/info';
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <aside className={`vcard-sidebar p-6 lg:p-8 flex flex-col items-center lg:sticky lg:top-10 transition-all duration-300 ${
-      isOpen ? "max-h-[800px]" : "max-h-[140px] lg:max-h-none"
-    } overflow-hidden lg:overflow-visible relative`}>
-      
+    <aside className={`vcard-sidebar p-6 lg:p-8 flex flex-col items-center lg:sticky lg:top-10 transition-all duration-300 ${isOpen ? "max-h-[800px]" : "max-h-[140px] lg:max-h-none"
+      } overflow-hidden lg:overflow-visible relative`}>
+
       {/* Expand/Collapse Button for Mobile */}
-      <button 
+      <button
         onClick={() => setIsOpen(!isOpen)}
         className="absolute top-9 right-6 lg:hidden flex items-center gap-1.5 px-3 py-1.5 border border-amber-200 text-amber-200 hover:bg-amber-200 hover:text-black rounded-lg text-[10px] font-medium uppercase tracking-wider"
       >
@@ -24,7 +24,7 @@ export default function Sidebar() {
         <div className="w-16 h-16 lg:w-32 lg:h-32 bg-[#2b2b2c] rounded-2xl border border-[#38383f] flex-shrink-0 flex items-center justify-center text-xl lg:text-3xl font-bold text-[#ffdb70] tracking-wide select-none">
           JD
         </div>
-        
+
         <div className="text-left lg:text-center flex-1">
           <h1 className="text-sm lg:text-lg font-semibold text-white tracking-wide">
             Jan Díez de los Ríos
@@ -45,8 +45,8 @@ export default function Sidebar() {
             </div>
             <div className="overflow-hidden">
               <span className="text-[10px] text-gray-500 block uppercase">Email</span>
-              <a href="mailto:jan10diez@gmail.com" className="text-white hover:text-[#ffdb70] block truncate">
-                jan10diez@gmail.com
+              <a href={`mailto:${personalInfo.email}`} className="text-white hover:text-[#ffdb70] block truncate">
+                {personalInfo.email}
               </a>
             </div>
           </li>
@@ -58,7 +58,7 @@ export default function Sidebar() {
             </div>
             <div>
               <span className="text-[10px] text-gray-500 block uppercase">Phone</span>
-              <span className="text-white block">+34 600 000 000</span>
+              <span className="text-white block">{personalInfo.phone}</span>
             </div>
           </li>
 
@@ -69,7 +69,7 @@ export default function Sidebar() {
             </div>
             <div>
               <span className="text-[10px] text-gray-500 block uppercase">Birthday</span>
-              <span className="text-white block">June 3, 2002</span>
+              <span className="text-white block">{personalInfo.birthday}</span>
             </div>
           </li>
 
@@ -80,7 +80,7 @@ export default function Sidebar() {
             </div>
             <div>
               <span className="text-[10px] text-gray-500 block uppercase">Location</span>
-              <span className="text-white block">Madrid, Spain</span>
+              <span className="text-white block">{personalInfo.location}</span>
             </div>
           </li>
         </ul>
@@ -90,18 +90,18 @@ export default function Sidebar() {
 
         {/* Social Links */}
         <div className="flex justify-center gap-4 pb-2">
-          <a 
-            href="https://github.com" 
-            target="_blank" 
-            rel="noreferrer" 
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noreferrer"
             className="text-gray-400 hover:text-[#ffdb70] transition-colors text-lg"
           >
             <FaGithub />
           </a>
-          <a 
-            href="https://linkedin.com" 
-            target="_blank" 
-            rel="noreferrer" 
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noreferrer"
             className="text-gray-400 hover:text-[#ffdb70] transition-colors text-lg"
           >
             <FaLinkedin />
