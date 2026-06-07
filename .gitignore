@@ -32,3 +32,11 @@ next-env.d.ts
 # OS files
 .DS_Store
 Thumbs.db
+
+# Agent skills
+/.agents/
+skills-lock.json
+
+# IDEs and Editors
+/.idea
+/.vscode
