@@ -42,11 +42,11 @@ export default function Resume() {
   ];
 
   return (
-    <article className="tab-active py-4 md:py-6">
+    <article className="py-4 md:py-6">
       
       {/* Title */}
-      <header className="mb-8">
-        <h2 className="text-lg md:text-xl font-semibold text-white tracking-wider mb-2 uppercase">Resume</h2>
+      <header className="mb-10">
+        <h2 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-3">Resume</h2>
         <div className="title-underline" />
       </header>
 
@@ -54,19 +54,19 @@ export default function Resume() {
       <div className="space-y-12 mb-12">
         {/* Education */}
         <section>
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-9 h-9 bg-[#2b2b2c] border border-[#38383f] rounded-lg flex items-center justify-center text-[#ffdb70]">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="w-10 h-10 bg-zinc-800 border border-zinc-700/50 rounded-xl flex items-center justify-center text-blue-500 shadow-sm">
               <FaBookOpen />
             </div>
-            <h3 className="text-sm md:text-base font-semibold text-white uppercase tracking-wider">Education</h3>
+            <h3 className="text-base md:text-lg font-semibold text-white tracking-tight">Education</h3>
           </div>
 
           <ol className="timeline-list">
             {education.map((item, i) => (
               <li key={i} className="timeline-item">
-                <h4 className="text-xs md:text-sm font-semibold text-white leading-snug">{item.title}</h4>
-                <span className="text-[10px] text-[#ffdb70] block mt-1 font-medium">{item.location} | {item.date}</span>
-                <p className="text-[10px] md:text-xs text-gray-400 mt-2 leading-relaxed font-light">{item.description}</p>
+                <h4 className="text-sm md:text-base font-semibold text-white leading-snug tracking-tight">{item.title}</h4>
+                <span className="text-[11px] md:text-xs text-blue-400 block mt-1.5 font-medium tracking-wide">{item.location} | {item.date}</span>
+                <p className="text-xs md:text-sm text-zinc-400 mt-3 leading-relaxed font-light">{item.description}</p>
               </li>
             ))}
           </ol>
@@ -74,19 +74,19 @@ export default function Resume() {
 
         {/* Experience */}
         <section>
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-9 h-9 bg-[#2b2b2c] border border-[#38383f] rounded-lg flex items-center justify-center text-[#ffdb70]">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="w-10 h-10 bg-zinc-800 border border-zinc-700/50 rounded-xl flex items-center justify-center text-blue-500 shadow-sm">
               <FaBriefcase />
             </div>
-            <h3 className="text-sm md:text-base font-semibold text-white uppercase tracking-wider">Experience</h3>
+            <h3 className="text-base md:text-lg font-semibold text-white tracking-tight">Experience</h3>
           </div>
 
           <ol className="timeline-list">
             {experience.map((item, i) => (
               <li key={i} className="timeline-item">
-                <h4 className="text-xs md:text-sm font-semibold text-white leading-snug">{item.title}</h4>
-                <span className="text-[10px] text-[#ffdb70] block mt-1 font-medium">{item.company} | {item.date}</span>
-                <p className="text-[10px] md:text-xs text-gray-400 mt-2 leading-relaxed font-light">{item.description}</p>
+                <h4 className="text-sm md:text-base font-semibold text-white leading-snug tracking-tight">{item.title}</h4>
+                <span className="text-[11px] md:text-xs text-blue-400 block mt-1.5 font-medium tracking-wide">{item.company} | {item.date}</span>
+                <p className="text-xs md:text-sm text-zinc-400 mt-3 leading-relaxed font-light">{item.description}</p>
               </li>
             ))}
           </ol>
@@ -95,17 +95,17 @@ export default function Resume() {
 
       {/* Skills Section */}
       <section>
-        <h3 className="text-sm md:text-base font-semibold text-white tracking-wider mb-6 uppercase">My Skills</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-[#2b2b2c]/30 border border-[#38383f] rounded-2xl p-6">
+        <h3 className="text-base md:text-lg font-semibold text-white tracking-tight mb-6">Professional Skills</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 bg-zinc-900/50 border border-zinc-800 rounded-2xl p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.02)]">
           {skills.map((skill, i) => (
-            <div key={i} className="space-y-2">
-              <div className="flex justify-between text-xs font-medium">
-                <span className="text-white">{skill.name}</span>
-                <span className="text-[#ffdb70]">{skill.level}</span>
+            <div key={i} className="space-y-3">
+              <div className="flex justify-between text-xs font-medium tracking-wide">
+                <span className="text-zinc-200">{skill.name}</span>
+                <span className="text-blue-400">{skill.level}</span>
               </div>
-              <div className="h-2 bg-[#2b2b2c] border border-[#38383f] rounded-full overflow-hidden">
+              <div className="h-1.5 bg-zinc-800 border border-zinc-700/50 rounded-full overflow-hidden">
                 <div 
-                  className="h-full bg-gradient-to-r from-[#ffdb70] to-[#f39c12] rounded-full" 
+                  className="h-full bg-gradient-to-r from-blue-600 to-blue-400 rounded-full" 
                   style={{ width: skill.level }}
                 />
               </div>
